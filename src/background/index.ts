@@ -41,6 +41,7 @@ async function main() {
     if (!shouldArchive) return
 
     await archiver.queueForArchival(historyItem.url)
+    await archiver.submitQueue()
   })
 
   await chrome.alarms.clearAll()
